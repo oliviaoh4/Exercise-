@@ -10,18 +10,22 @@ for line in fhand:
     pieces=line.split(",")
     first_num=pieces[0]
     if first_num!='':
-        first_nume=float(first_num)
-    
+        first_num=float(first_num)
         exercise.append(first_num)
         print(exercise)
+elms=(max(exercise))-(min(exercise))+1
+amount=[0]*int(elms)
+for time in exercise:
+    nt=int(time-min(exercise))
+    print(nt)
+    amount[nt]+=1
+    
+values=list(range(int(min(exercise)),(int(max(exercise))+1)))
 
 
-
-
-
-        plt.bar(exercise,first_num)
-        plt.ylabel("Hours")
-        plt.title("Students Exercise")
-        plt.show()
+plt.bar(values,amount)
+plt.ylabel("Hours")
+plt.title("Students Exercise")
+plt.show()
 
 
